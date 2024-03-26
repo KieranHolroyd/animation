@@ -1,0 +1,224 @@
+---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div class="anim-container">
+      <div class="players" style="left: 10%;top:15%;">
+        <div class="overlay"></div>
+    <img src="/players.svg" />
+  </div>
+      <div  class="fivem" style="left: 20%;top:80%;">
+        <div class="overlay"></div>
+    <img src="/fivem.svg" />
+  </div>
+      <div class="connections" style="left: 25%;top:40%;">
+        <div class="overlay"></div>
+    <img  src="/connections.svg" />
+  </div>
+      <div class="logs" style="left: 40%;top:10%;">
+        <div class="overlay"></div>
+    <img  src="/logs.svg" />
+  </div>
+      <div class="bans" style="left: 50%;top:70%;">
+        <div class="overlay"></div>
+    <img  src="/bans.svg" />
+  </div>
+      <div class="triggers" style="left: 55%;top:35%;">
+        <div class="overlay"></div>
+    <img src="/triggers.svg" />
+  </div>
+      <div class="apollo" style="left: 75%;top:60%;">
+        <div class="overlay"></div>
+    <img src="/apollo.svg" />
+  </div>
+      <div class="alts" style="left: 80%;top:15%;">
+        <div class="overlay"></div>
+    <img src="/alts.svg" />
+  </div>
+    </div>
+  </body>
+</html>
+<style>
+  html {
+    background-color: black;
+  }
+  .anim-container {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+		border: 2px solid red;
+
+    div {
+      border-radius: 8px;
+      position: absolute;
+      .overlay {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: rgba(0,0,0,0.7);
+        transform: scale(1.05);
+        z-index: 10;
+      }
+      img {
+        width: 150px;
+        height: 150px;
+
+        border-radius: 8px;
+        transform: scale(0.9);
+        filter: grayscale(100%);
+      }
+
+    }
+    .players {
+      .overlay {
+        animation: overlay 5s ease-in-out forwards;
+      }
+      img {
+        animation: present 5s ease-in-out forwards;
+      }
+    }
+    .fivem {
+      .overlay {
+        animation: overlay 5s ease-in-out forwards 5s;
+      }
+      img {
+        animation: present 5s ease-in-out forwards 5s;
+      }
+    }
+    .connections {
+      .overlay {
+        animation: overlay 5s ease-in-out forwards 10s;
+      }
+      img {
+        animation: present 5s ease-in-out forwards 10s;
+      }
+    }
+    .logs {
+      .overlay {
+        animation: overlay 5s ease-in-out forwards 15s;
+      }
+      img {
+        animation: present 5s ease-in-out forwards 15s;
+      }
+    }
+    .bans {
+      .overlay {
+        animation: overlay 5s ease-in-out forwards 20s;
+      }
+      img {
+        animation: present 5s ease-in-out forwards 20s;
+      }
+    }
+    .triggers {
+      .overlay {
+        animation: overlay 5s ease-in-out forwards 25s;
+      }
+      img {
+        animation: present 5s ease-in-out forwards 25s;
+      }
+    }
+    .apollo {
+      .overlay {
+        animation: overlay 5s ease-in-out forwards 30s;
+      }
+      img {
+        animation: present 5s ease-in-out forwards 30s;
+      }
+    }
+    .alts {
+      .overlay {
+        animation: overlay 5s ease-in-out forwards 35s;
+      }
+      img {
+        animation: present 5s ease-in-out forwards 35s;
+      }
+    }
+  }
+  @keyframes overlay {
+    0% {
+      transform: scale(0.9)
+      background-color: rgba(0,0,0,0.7);
+    }
+    15% {
+      transform: scale(1);
+      background-color: transparent;
+    }
+    85% {
+      transform: scale(1);
+      background-color: transparent;
+    }
+    100% {
+      transform: scale(0.9);
+      background-color: rgba(0,0,0,0.7);
+    }
+  }
+  @keyframes present {
+    0% {
+      transform: scale(0.9);
+			filter: grayscale(100%);
+      box-shadow: none;
+    }
+		15% {
+      box-shadow: 0 0 0 20px rgba(255, 127, 78, 0.1);
+      transform: scale(1);
+			filter: grayscale(0);
+		}
+    20% {
+      transform: scale(1.05);
+    }
+    25% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1.05);
+    }
+    35% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(1.05);
+    }
+    45% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    55% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(1.05);
+    }
+    65% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(1.05);
+    }
+    75% {
+      transform: scale(1);
+    }
+    80% {
+      transform: scale(1.05);
+    }
+		85% {
+      transform: scale(1);
+			filter: grayscale(0);
+      box-shadow: 0 0 0 20px rgba(255, 127, 78, 0.1);
+		}
+    100% {
+      transform: scale(0.9);
+			filter: grayscale(100%);
+    }
+  }
+</style>
