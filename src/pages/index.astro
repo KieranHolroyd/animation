@@ -1,5 +1,12 @@
 ---
-
+import Alts from '../component/alts.svg?raw';
+import Apollo from '../component/apollo.svg?raw';
+import Bans from '../component/bans.svg?raw';
+import Connections from '../component/connections.svg?raw';
+import FiveM from '../component/fivem.svg?raw';
+import Logs from '../component/logs.svg?raw';
+import Players from '../component/players.svg?raw';
+import Triggers from '../component/triggers.svg?raw';
 ---
 
 <html lang="en">
@@ -14,35 +21,43 @@
     <div class="anim-container">
       <div class="players" style="left: 10%;top:15%;">
         <div class="overlay"></div>
-    <img src="/players.svg" />
+  <Fragment set:html={Players} />
+  <p class="text">Players</p>
   </div>
       <div  class="fivem" style="left: 20%;top:80%;">
         <div class="overlay"></div>
-    <img src="/fivem.svg" />
+        <Fragment set:html={FiveM} />
+<p class="text">FiveM</p>
   </div>
       <div class="connections" style="left: 25%;top:40%;">
         <div class="overlay"></div>
-    <img  src="/connections.svg" />
+        <Fragment set:html={Connections} />
+<p class="text">Connections</p>
   </div>
       <div class="logs" style="left: 40%;top:10%;">
         <div class="overlay"></div>
-    <img  src="/logs.svg" />
+        <Fragment set:html={Logs} />
+<p class="text">Logs</p>
   </div>
       <div class="bans" style="left: 50%;top:70%;">
         <div class="overlay"></div>
-    <img  src="/bans.svg" />
+        <Fragment set:html={Bans} />
+<p class="text">Bans</p>
   </div>
       <div class="triggers" style="left: 55%;top:35%;">
         <div class="overlay"></div>
-    <img src="/triggers.svg" />
+        <Fragment set:html={Triggers} />
+<p class="text">Triggers</p>
   </div>
       <div class="apollo" style="left: 75%;top:60%;">
         <div class="overlay"></div>
-    <img src="/apollo.svg" />
+        <Fragment set:html={Apollo} />
+<p class="text">Apollo</p>
   </div>
       <div class="alts" style="left: 80%;top:15%;">
         <div class="overlay"></div>
-    <img src="/alts.svg" />
+        <Fragment set:html={Alts} />
+<p class="text">Alts</p>
   </div>
     </div>
   </body>
@@ -60,7 +75,9 @@
     div {
       border-radius: 8px;
       position: absolute;
+
       .overlay {
+        transition: 200ms !important;
         position: absolute;
         width: 150px;
         height: 150px;
@@ -68,78 +85,153 @@
         transform: scale(1.05);
         z-index: 10;
       }
-      img {
+      svg {
+        transition: 200ms !important;
         width: 150px;
         height: 150px;
 
         border-radius: 8px;
         transform: scale(0.9);
         filter: grayscale(100%);
+        .icon {
+          transition: 200ms !important;
+          transform: translateY(0);
+          animation: rect 5s ease-in-out forwards;
+        }
+      }
+      .text {
+        transition: 200ms !important;
+        font-family: sans-serif;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.4);
+        opacity: 0;
+        color: white;
+        font-weight: bold;
       }
 
+      &:hover {
+        .icon {
+          transform: translateY(-10%) !important;
+        }
+        .text {
+          opacity: 1 !important;
+          transform: translate(-50%, 40%) scale(1) !important;
+        }
+      }
     }
     .players {
       .overlay {
-        animation: overlay 5s ease-in-out forwards;
+        animation: overlay 5s ease-in-out forwards 0s;
       }
-      img {
-        animation: present 5s ease-in-out forwards;
+      svg {
+        animation: present 5s ease-in-out forwards 0s;
+        .icon {
+          animation: rect 5s ease-in-out forwards 0s;
+        }
+      }
+      .text {
+        animation: text 5s ease-in-out forwards 0s;
       }
     }
     .fivem {
       .overlay {
         animation: overlay 5s ease-in-out forwards 5s;
       }
-      img {
+      svg {
         animation: present 5s ease-in-out forwards 5s;
+        .icon {
+          animation: rect 5s ease-in-out forwards 5s;
+        }
+      }
+      .text {
+        animation: text 5s ease-in-out forwards 5s;
       }
     }
     .connections {
       .overlay {
         animation: overlay 5s ease-in-out forwards 10s;
       }
-      img {
+      svg {
         animation: present 5s ease-in-out forwards 10s;
+        .icon {
+          animation: rect 5s ease-in-out forwards 10s;
+        }
+      }
+      .text {
+        animation: text 5s ease-in-out forwards 10s;
       }
     }
     .logs {
       .overlay {
         animation: overlay 5s ease-in-out forwards 15s;
       }
-      img {
+      svg {
         animation: present 5s ease-in-out forwards 15s;
+        .icon {
+          animation: rect 5s ease-in-out forwards 15s;
+        }
+      }
+      .text {
+        animation: text 5s ease-in-out forwards 15s;
       }
     }
     .bans {
       .overlay {
         animation: overlay 5s ease-in-out forwards 20s;
       }
-      img {
+      svg {
         animation: present 5s ease-in-out forwards 20s;
+        .icon {
+          animation: rect 5s ease-in-out forwards 20s;
+        }
+      }
+      .text {
+        animation: text 5s ease-in-out forwards 20s;
       }
     }
     .triggers {
       .overlay {
         animation: overlay 5s ease-in-out forwards 25s;
       }
-      img {
+      svg {
         animation: present 5s ease-in-out forwards 25s;
+        .icon {
+          animation: rect 5s ease-in-out forwards 25s;
+        }
+      }
+      .text {
+        animation: text 5s ease-in-out forwards 25s;
       }
     }
     .apollo {
       .overlay {
         animation: overlay 5s ease-in-out forwards 30s;
       }
-      img {
+      svg {
         animation: present 5s ease-in-out forwards 30s;
+        .icon {
+          animation: rect 5s ease-in-out forwards 30s;
+        }
+      }
+      .text {
+        animation: text 5s ease-in-out forwards 30s;
       }
     }
     .alts {
       .overlay {
         animation: overlay 5s ease-in-out forwards 35s;
       }
-      img {
+      svg {
         animation: present 5s ease-in-out forwards 35s;
+        .icon {
+          animation: rect 5s ease-in-out forwards 35s;
+        }
+      }
+      .text {
+        animation: text 5s ease-in-out forwards 35s;
       }
     }
   }
@@ -220,5 +312,75 @@
       transform: scale(0.9);
 			filter: grayscale(100%);
     }
+  }
+  @keyframes rect {
+    0% {
+      transform: translateY(0);
+    }
+    15% {
+      transform: translateY(-10%);
+    }
+    85% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes text {
+    0% {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    15% {
+      opacity: 1;
+      transform: translate(-50%, 40%) scale(1);
+    }
+    20% {
+      transform: translate(-50%, 50%) scale(1.05);
+    }
+    25% {
+      transform: translate(-50%, 40%) scale(1);
+    }
+    30% {
+      transform: translate(-50%, 50%) scale(1.05);
+    }
+    35% {
+      transform: translate(-50%, 40%) scale(1);
+    }
+    40% {
+      transform: translate(-50%, 50%) scale(1.05);
+    }
+    45% {
+      transform: translate(-50%, 40%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, 50%) scale(1.05);
+    }
+    55% {
+      transform: translate(-50%, 40%) scale(1);
+    }
+    60% {
+      transform: translate(-50%, 50%) scale(1.05);
+    }
+    65% {
+      transform: translate(-50%, 40%) scale(1);
+    }
+    70% {
+      transform: translate(-50%, 50%) scale(1.05);
+    }
+    75% {
+      transform: translate(-50%, 40%) scale(1);
+    }
+    80% {
+      transform: translate(-50%, 50%) scale(1.05);
+    }
+    85% {
+      opacity: 1;
+      transform: translate(-50%, 40%) scale(1);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+
   }
 </style>
