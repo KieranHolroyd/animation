@@ -1,71 +1,62 @@
 ---
 import Alts from '../component/alts.svg?raw';
-import Apollo from '../component/apollo.svg?raw';
+import Webhooks from '../component/webhooks.svg?raw';
 import Bans from '../component/bans.svg?raw';
 import Connections from '../component/connections.svg?raw';
-import FiveM from '../component/fivem.svg?raw';
+import Apollo from '../component/apollo.svg?raw';
 import Logs from '../component/logs.svg?raw';
 import Players from '../component/players.svg?raw';
 import Triggers from '../component/triggers.svg?raw';
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content="{Astro.generator}" />
-    <title>Astro</title>
-  </head>
-  <body>
-    <div class="anim-container">
-      <div class="players" style="left: 10%; top: 15%">
-        <div class="overlay"></div>
-        <Fragment set:html={Players} />
-        <p class="text">Players</p>
-      </div>
-      <div class="fivem" style="left: 20%; top: 80%">
-        <div class="overlay"></div>
-        <Fragment set:html={FiveM} />
-        <p class="text">Apollo</p>
-      </div>
-      <div class="connections" style="left: 25%; top: 40%">
-        <div class="overlay"></div>
-        <Fragment set:html={Connections} />
-        <p class="text">Connections</p>
-      </div>
-      <div class="logs" style="left: 40%; top: 10%">
-        <div class="overlay"></div>
-        <Fragment set:html={Logs} />
-        <p class="text">Logs</p>
-      </div>
-      <div class="bans" style="left: 50%; top: 70%">
-        <div class="overlay"></div>
-        <Fragment set:html={Bans} />
-        <p class="text">Bans</p>
-      </div>
-      <div class="triggers" style="left: 55%; top: 35%">
-        <div class="overlay"></div>
-        <Fragment set:html={Triggers} />
-        <p class="text">Triggers</p>
-      </div>
-      <div class="apollo" style="left: 75%; top: 60%">
-        <div class="overlay"></div>
-        <Fragment set:html={Apollo} />
-        <p class="text">Webhooks</p>
-      </div>
-      <div class="alts" style="left: 80%; top: 15%">
-        <div class="overlay"></div>
-        <Fragment set:html={Alts} />
-        <p class="text">Alts</p>
-      </div>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<body>
+  <div class="anim-container">
+    <div class="players" style="left: 10%; top: 15%">
+      <div class="overlay"></div>
+      <Fragment set:html={Players} />
+      <p class="text">Players</p>
     </div>
-  </body>
-</html>
+    <div class="apollo" style="left: 20%; top: 80%">
+      <div class="overlay"></div>
+      <Fragment set:html={Apollo} />
+      <p class="text">Triggers</p>
+    </div>
+    <div class="connections" style="left: 25%; top: 40%">
+      <div class="overlay"></div>
+      <Fragment set:html={Connections} />
+      <p class="text">Connections</p>
+    </div>
+    <div class="logs" style="left: 40%; top: 10%">
+      <div class="overlay"></div>
+      <Fragment set:html={Logs} />
+      <p class="text">Logs</p>
+    </div>
+    <div class="bans" style="left: 50%; top: 70%">
+      <div class="overlay"></div>
+      <Fragment set:html={Bans} />
+      <p class="text">Bans</p>
+    </div>
+    <div class="triggers" style="left: 55%; top: 35%">
+      <div class="overlay"></div>
+      <Fragment set:html={Triggers} />
+      <p class="text">Webhooks</p>
+    </div>
+    <div class="webhooks" style="left: 75%; top: 60%">
+      <div class="overlay"></div>
+      <Fragment set:html={Webhooks} />
+      <p class="text">Apollo</p>
+    </div>
+    <div class="alts" style="left: 80%; top: 15%">
+      <div class="overlay"></div>
+      <Fragment set:html={Alts} />
+      <p class="text">Alts</p>
+    </div>
+  </div>
+</body>
 
 <script>
   const replayAnimations = () => {
-    document.querySelector('.anim-container').getAnimations().forEach((anim) => {
+    document.getAnimations().forEach((anim) => {
       anim.cancel();
       anim.play();
     });
@@ -116,7 +107,7 @@ import Triggers from '../component/triggers.svg?raw';
       .text {
         transition: 200ms !important;
         font-family: 'Montserrat', sans-serif;
-        font-size: 0.7em;
+        font-size: 0.65em;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -140,7 +131,7 @@ import Triggers from '../component/triggers.svg?raw';
         animation: text 5s ease-in-out forwards 0s;
       }
     }
-    .fivem {
+    .webhooks {
       .overlay {
         animation: overlay 5s ease-in-out forwards 5s;
       }
