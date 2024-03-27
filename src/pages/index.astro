@@ -14,62 +14,77 @@ import Triggers from '../component/triggers.svg?raw';
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content="{Astro.generator}" />
     <title>Astro</title>
   </head>
   <body>
     <div class="anim-container">
-      <div class="players" style="left: 10%;top:15%;">
+      <div class="players" style="left: 10%; top: 15%">
         <div class="overlay"></div>
-  <Fragment set:html={Players} />
-  <p class="text">Players</p>
-  </div>
-      <div  class="fivem" style="left: 20%;top:80%;">
+        <Fragment set:html={Players} />
+        <p class="text">Players</p>
+      </div>
+      <div class="fivem" style="left: 20%; top: 80%">
         <div class="overlay"></div>
         <Fragment set:html={FiveM} />
-<p class="text">FiveM</p>
-  </div>
-      <div class="connections" style="left: 25%;top:40%;">
+        <p class="text">Apollo</p>
+      </div>
+      <div class="connections" style="left: 25%; top: 40%">
         <div class="overlay"></div>
         <Fragment set:html={Connections} />
-<p class="text">Connections</p>
-  </div>
-      <div class="logs" style="left: 40%;top:10%;">
+        <p class="text">Connections</p>
+      </div>
+      <div class="logs" style="left: 40%; top: 10%">
         <div class="overlay"></div>
         <Fragment set:html={Logs} />
-<p class="text">Logs</p>
-  </div>
-      <div class="bans" style="left: 50%;top:70%;">
+        <p class="text">Logs</p>
+      </div>
+      <div class="bans" style="left: 50%; top: 70%">
         <div class="overlay"></div>
         <Fragment set:html={Bans} />
-<p class="text">Bans</p>
-  </div>
-      <div class="triggers" style="left: 55%;top:35%;">
+        <p class="text">Bans</p>
+      </div>
+      <div class="triggers" style="left: 55%; top: 35%">
         <div class="overlay"></div>
         <Fragment set:html={Triggers} />
-<p class="text">Triggers</p>
-  </div>
-      <div class="apollo" style="left: 75%;top:60%;">
+        <p class="text">Triggers</p>
+      </div>
+      <div class="apollo" style="left: 75%; top: 60%">
         <div class="overlay"></div>
         <Fragment set:html={Apollo} />
-<p class="text">Apollo</p>
-  </div>
-      <div class="alts" style="left: 80%;top:15%;">
+        <p class="text">Webhooks</p>
+      </div>
+      <div class="alts" style="left: 80%; top: 15%">
         <div class="overlay"></div>
         <Fragment set:html={Alts} />
-<p class="text">Alts</p>
-  </div>
+        <p class="text">Alts</p>
+      </div>
     </div>
   </body>
 </html>
+
+<script>
+  const replayAnimations = () => {
+    document.getAnimations().forEach((anim) => {
+      anim.cancel();
+      anim.play();
+    });
+  };
+
+  setInterval(replayAnimations, 40000);
+</script>
 <style>
+  :root {
+    --size: 75px;
+  }
+
   html {
     background-color: black;
   }
   .anim-container {
     position: relative;
-    width: 1000px;
-    height: 1000px;
+    width: 500px;
+    height: 500px;
 		border: 2px solid red;
 
     div {
@@ -79,16 +94,16 @@ import Triggers from '../component/triggers.svg?raw';
       .overlay {
         transition: 200ms !important;
         position: absolute;
-        width: 150px;
-        height: 150px;
+        width: var(--size);
+        height: var(--size);
         background-color: rgba(0,0,0,0.7);
         transform: scale(1.05);
         z-index: 10;
       }
       svg {
         transition: 200ms !important;
-        width: 150px;
-        height: 150px;
+        width: var(--size);
+        height: var(--size);
 
         border-radius: 8px;
         transform: scale(0.9);
@@ -102,7 +117,7 @@ import Triggers from '../component/triggers.svg?raw';
       .text {
         transition: 200ms !important;
         font-family: 'Montserrat', sans-serif;
-        font-size: 20px;
+        font-size: 0.7em;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -112,14 +127,16 @@ import Triggers from '../component/triggers.svg?raw';
         font-weight: 300;
       }
 
-      &:hover {
-        .icon {
-          transform: translateY(-10%) !important;
-        }
-        .text {
-          opacity: 1 !important;
-          transform: translate(-50%, 40%) scale(1) !important;
-        }
+    }
+    div:hover {
+      .icon {
+        transition: 200ms !important;
+        transform: translateY(-10%) !important;
+      }
+      .text {
+        transition: 200ms !important;
+        opacity: 1 !important;
+        transform: translate(-50%, 30%) scale(0.9) !important;
       }
     }
     .players {
