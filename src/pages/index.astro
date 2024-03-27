@@ -65,12 +65,12 @@ import Triggers from '../component/triggers.svg?raw';
 
 <script>
   const replayAnimations = () => {
-    document.getAnimations().forEach((anim) => {
+    document.querySelector('.anim-container').getAnimations().forEach((anim) => {
       anim.cancel();
       anim.play();
     });
   };
-
+  
   setInterval(replayAnimations, 40000);
 </script>
 <style>
